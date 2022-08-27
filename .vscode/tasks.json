@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Debug With Tests Full",
+            "type": "shell",
+            "command": "cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTING=ON -B build && cmake --build build",
+            "group": "build",
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "ctest --test-dir ./build",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Test Valgrind",
+            "type": "shell",
+            "command": "ulimit -n 2048 && cmake --build build -t valgrind-memcheck",
+            "group": {
+                "kind": "test"
+            }
+        },
+        {
+            "label": "Test Callgrind",
+            "type": "shell",
+            "command": "ulimit -n 2048 && cmake --build build -t valgrind-callgrind",
+            "group": {
+                "kind": "test",
+            }
+        },
+        {
+            "label": "Clean All",
+            "type": "shell",
+            "command": "rm -fr build"
+        }
+    ]
+}

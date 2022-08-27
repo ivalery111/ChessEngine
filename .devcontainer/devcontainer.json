@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json.
+// For config options, see the README at:
+//   https://github.com/microsoft/vscode-dev-containers/tree/v0.154.2/containers/cpp
+{
+	"name": "ChessEngine",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "ubuntu-22.04"
+		}
+	},
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"clangd.path": "/usr/bin/clangd",
+		"editor.formatOnSave": false
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools",
+		"xulion.codescope",
+		"eamodio.gitlens",
+        "xaver.clang-format",
+        "notskm.clang-tidy",
+		"twxs.cmake"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}

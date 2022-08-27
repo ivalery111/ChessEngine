@@ -1,0 +1,4 @@
+build
+Testing
+callgrind*
+compile_commands*
