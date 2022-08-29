@@ -1,4 +1,4 @@
-function(DoFormat target directory)
+function(format target directory)
     find_program(CLANG-FORMAT_PATH clang-format REQUIRED)
 
     set(EXPRESSION h hpp hh c cc cxx cpp)

@@ -1,4 +1,4 @@
-function(ValgrindMemcheck target)
+function(valgrind_memcheck target)
     find_program(VALGRIND_PATH valgrind REQUIRED)
 
     set(VALGRIND_OPTS --leak-check=yes)
@@ -9,7 +9,7 @@ function(ValgrindMemcheck target)
     )
 endfunction()
 
-function(ValgrindCallgrind target)
+function(valgrind_callgrind target)
     find_program(VALGRIND_PATH valgrind REQUIRED)
     
     set(VALGRIND_OPTS --tool=callgrind
