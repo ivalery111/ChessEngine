@@ -9,5 +9,5 @@ add_test(
 )
 
 include(Valgrind)
-ValgrindMemcheck(test_sum)
-ValgrindCallgrind(test_sum)
+valgrind_memcheck(test_sum)
+valgrind_callgrind(test_sum)

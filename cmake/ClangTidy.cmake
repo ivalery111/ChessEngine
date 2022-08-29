@@ -1,4 +1,4 @@
-function(DoClangTidy target)
+function(clang_tidy target)
     find_program(CLANG-TIDY_PATH clang-tidy REQUIRED)
 
     set_target_properties(${target}

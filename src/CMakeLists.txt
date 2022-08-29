@@ -3,5 +3,5 @@ include(Format)
 
 add_library(sum sum.cpp)
 target_include_directories(sum PUBLIC .)
-DoClangTidy(sum)
-DoFormat(sum .)
+clang_tidy(sum)
+format(sum .)
